@@ -12,6 +12,13 @@ struct ChargingStation: Decodable, Identifiable {
     let addressInfo: AddressInfo
     let connections: [Connection]?
     let usageType: UsageType?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "ID"
+        case addressInfo = "AddressInfo"
+        case connections = "Connections"
+        case usageType = "UsageType"
+    }
 
     struct AddressInfo: Decodable {
         let title: String?

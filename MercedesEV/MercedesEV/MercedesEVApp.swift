@@ -11,7 +11,9 @@ import SwiftUI
 struct MercedesEVApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let service = ChargingStationService()
+            let viewModel = StationListViewModel(service: service)
+            StationListView(viewModel: viewModel)
         }
     }
 }

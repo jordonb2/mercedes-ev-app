@@ -13,7 +13,7 @@ protocol ChargingStationServiceProtocol {
 
 class ChargingStationService: ChargingStationServiceProtocol {
     func fetchStations(latitude: Double, longitude: Double, completion: @escaping (Result<[ChargingStation], Error>) -> Void) {
-        let urlString = "https://api.openchargemap.io/v3/poi/?output=json&latitude=\(latitude)&longitude=\(longitude)&maxresults=20&compact=true&verbose=false&key=c306c1d5-5b86-4a65-9513-869b37175d8"
+        let urlString = "https://api.openchargemap.io/v3/poi/?output=json&latitude=\(latitude)&longitude=\(longitude)&maxresults=20&compact=true&verbose=false&key=b9c2e39b-8085-46e9-96fc-a3199799ac10"
         
         guard let url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
