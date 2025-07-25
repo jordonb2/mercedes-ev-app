@@ -25,7 +25,7 @@ class StationListViewModel: ObservableObject {
         32: "Tesla Supercharger"
     ]
 
-    init(service: ChargingStationServiceProtocol) {
+    init(service: ChargingStationServiceProtocol = ChargingStationService()) {
         self.service = service
     }
 

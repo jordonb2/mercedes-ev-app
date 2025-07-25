@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		F753375E2E33E64600966DAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F75337202E316B6000966DAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F75337272E316B6000966DAD;
+			remoteInfo = MercedesEV;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		F75337282E316B6000966DAD /* MercedesEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercedesEV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F753375A2E33E64600966DAD /* MercedesEVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercedesEVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = MercedesEV;
 			sourceTree = "<group>";
 		};
+		F753375B2E33E64600966DAD /* MercedesEVTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MercedesEVTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F75337252E316B6000966DAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F75337572E33E64600966DAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				F753372A2E316B6000966DAD /* MercedesEV */,
+				F753375B2E33E64600966DAD /* MercedesEVTests */,
 				F75337292E316B6000966DAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				F75337282E316B6000966DAD /* MercedesEV.app */,
+				F753375A2E33E64600966DAD /* MercedesEVTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = F75337282E316B6000966DAD /* MercedesEV.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F75337592E33E64600966DAD /* MercedesEVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F75337602E33E64600966DAD /* Build configuration list for PBXNativeTarget "MercedesEVTests" */;
+			buildPhases = (
+				F75337562E33E64600966DAD /* Sources */,
+				F75337572E33E64600966DAD /* Frameworks */,
+				F75337582E33E64600966DAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F753375F2E33E64600966DAD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F753375B2E33E64600966DAD /* MercedesEVTests */,
+			);
+			name = MercedesEVTests;
+			packageProductDependencies = (
+			);
+			productName = MercedesEVTests;
+			productReference = F753375A2E33E64600966DAD /* MercedesEVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					F75337272E316B6000966DAD = {
 						CreatedOnToolsVersion = 16.4;
+					};
+					F75337592E33E64600966DAD = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = F75337272E316B6000966DAD;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				F75337272E316B6000966DAD /* MercedesEV */,
+				F75337592E33E64600966DAD /* MercedesEVTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F75337262E316B6000966DAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F75337582E33E64600966DAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F75337562E33E64600966DAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F753375F2E33E64600966DAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F75337272E316B6000966DAD /* MercedesEV */;
+			targetProxy = F753375E2E33E64600966DAD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F75337312E316B6100966DAD /* Debug */ = {
@@ -298,6 +373,40 @@
 			};
 			name = Release;
 		};
+		F75337612E33E64600966DAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Test.MercedesEVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MercedesEV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MercedesEV";
+			};
+			name = Debug;
+		};
+		F75337622E33E64600966DAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Test.MercedesEVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MercedesEV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MercedesEV";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -315,6 +424,15 @@
 			buildConfigurations = (
 				F75337342E316B6100966DAD /* Debug */,
 				F75337352E316B6100966DAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F75337602E33E64600966DAD /* Build configuration list for PBXNativeTarget "MercedesEVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F75337612E33E64600966DAD /* Debug */,
+				F75337622E33E64600966DAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
