@@ -28,6 +28,7 @@ struct ChargingStation: Decodable, Identifiable {
         let postcode: String?
         let latitude: Double?
         let longitude: Double?
+        let accessComments: String?
         
         enum CodingKeys: String, CodingKey {
             case title = "Title"
@@ -37,6 +38,7 @@ struct ChargingStation: Decodable, Identifiable {
             case postcode = "Postcode"
             case latitude = "Latitude"
             case longitude = "Longitude"
+            case accessComments = "AccessComments"
         }
     }
 

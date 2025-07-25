@@ -26,6 +26,13 @@ struct StationDetailView: View {
                 Text("Usage: \(viewModel.usageType)")
                     .font(.subheadline)
             }
+            
+            if !viewModel.accessComments.isEmpty {
+                Text("Access Comments:")
+                    .font(.headline)
+                Text(viewModel.accessComments)
+                    .font(.subheadline)
+            }
 
             if !viewModel.connectionTypes.isEmpty {
                 Text("Connection Types:")

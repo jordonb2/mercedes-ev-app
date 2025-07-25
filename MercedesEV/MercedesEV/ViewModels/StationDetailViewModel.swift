@@ -30,11 +30,28 @@ final class StationDetailViewModel: ObservableObject {
     }
 
     var connectionTypes: [String] {
-        station.connections?
+        let types = station.connections?
             .compactMap { $0.connectionType?.title }
-            ?? ["No connections available"]
+        ?? []
+        return types.isEmpty ? ["No connections available"] : types
     }
-
+    
+    var accessComments: String {
+        station.addressInfo.accessComments ?? ""
+    }
+    
+    private func connectionTitle(from id: Int?) -> String {
+        guard let id = id else { return "Unknown" }
+        switch id {
+        case 1: return "Type 1 (J1772)"
+        case 2: return "Type 2 (Mennekes)"
+        case 3: return "CHAdeMO"
+        case 32: return "CCS Combo"
+            // Add more as needed based on OpenChargeMap documentation
+        default: return "Unknown Type"
+        }
+    }
+    
     var latitude: Double? {
         station.addressInfo.latitude
     }
