@@ -15,6 +15,16 @@ class StationListViewModel: ObservableObject {
 
     private let service: ChargingStationServiceProtocol
 
+    // MARK: - Connection Type Mapping
+    let connectionTypeLookup: [Int: String] = [
+        1: "Type 1 (J1772)",
+        2: "Type 2 (Mennekes)",
+        3: "CHAdeMO",
+        4: "CCS Combo 1",
+        5: "CCS Combo 2",
+        32: "Tesla Supercharger"
+    ]
+
     init(service: ChargingStationServiceProtocol) {
         self.service = service
     }

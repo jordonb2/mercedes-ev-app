@@ -7,6 +7,16 @@
 
 import Foundation
 
+// Global lookup for connection type titles
+let connectionTypeLookup: [Int: String] = [
+    1: "Type 1 (J1772)",
+    2: "Type 2 (Mennekes)",
+    3: "CHAdeMO",
+    4: "CCS Combo 1",
+    5: "CCS Combo 2",
+    32: "Tesla Supercharger"
+]
+
 struct ChargingStation: Decodable, Identifiable {
     let id: Int
     let addressInfo: AddressInfo
@@ -19,6 +29,19 @@ struct ChargingStation: Decodable, Identifiable {
         case connections = "Connections"
         case usageType = "UsageType"
     }
+
+    var connectionTypes: [String] {
+        let types: [String] = connections?
+            .compactMap { connection in
+                if let id = connection.connectionTypeID {
+                    return connectionTypeLookup[id]
+                }
+                return nil
+            } ?? []
+        
+        return types.isEmpty ? ["No connections available"] : types
+    }
+}
 
     struct AddressInfo: Decodable {
         let title: String?
@@ -43,18 +66,10 @@ struct ChargingStation: Decodable, Identifiable {
     }
 
     struct Connection: Decodable {
-        let connectionType: ConnectionType?
+        let connectionTypeID: Int?
         
         enum CodingKeys: String, CodingKey {
-            case connectionType = "ConnectionType"
-        }
-
-        struct ConnectionType: Decodable {
-            let title: String?
-            
-            enum CodingKeys: String, CodingKey {
-                case title = "Title"
-            }
+            case connectionTypeID = "ConnectionTypeID"
         }
     }
 
@@ -65,4 +80,3 @@ struct ChargingStation: Decodable, Identifiable {
             case title = "Title"
         }
     }
-}

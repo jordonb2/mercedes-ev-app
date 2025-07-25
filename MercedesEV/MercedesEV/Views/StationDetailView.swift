@@ -22,7 +22,7 @@ struct StationDetailView: View {
                     .foregroundColor(.secondary)
             }
 
-            if !viewModel.usageType.isEmpty {
+            if !viewModel.usageType.isEmpty && viewModel.usageType != "Unknown" {
                 Text("Usage: \(viewModel.usageType)")
                     .font(.subheadline)
             }

@@ -30,9 +30,10 @@ final class StationDetailViewModel: ObservableObject {
     }
 
     var connectionTypes: [String] {
-        let types = station.connections?
-            .compactMap { $0.connectionType?.title }
-        ?? []
+        let rawConnections = station.connections ?? []
+        
+        let types = rawConnections.compactMap { connectionTitle(from: $0.connectionTypeID) }
+        
         return types.isEmpty ? ["No connections available"] : types
     }
     
