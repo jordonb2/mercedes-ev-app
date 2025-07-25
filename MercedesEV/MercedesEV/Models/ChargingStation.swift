@@ -28,17 +28,39 @@ struct ChargingStation: Decodable, Identifiable {
         let postcode: String?
         let latitude: Double?
         let longitude: Double?
+        
+        enum CodingKeys: String, CodingKey {
+            case title = "Title"
+            case addressLine1 = "AddressLine1"
+            case town = "Town"
+            case stateOrProvince = "StateOrProvince"
+            case postcode = "Postcode"
+            case latitude = "Latitude"
+            case longitude = "Longitude"
+        }
     }
 
     struct Connection: Decodable {
         let connectionType: ConnectionType?
+        
+        enum CodingKeys: String, CodingKey {
+            case connectionType = "ConnectionType"
+        }
 
         struct ConnectionType: Decodable {
             let title: String?
+            
+            enum CodingKeys: String, CodingKey {
+                case title = "Title"
+            }
         }
     }
 
     struct UsageType: Decodable {
         let title: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case title = "Title"
+        }
     }
 }
