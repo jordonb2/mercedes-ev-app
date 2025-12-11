@@ -3,7 +3,7 @@
 A SwiftUI application that helps users find nearby electric vehicle charging stations using Open Charge Map API.
 
 ---
-
+ Test
 ## 🚧 Architecture Overview
 
 This project follows a modular MVVM (Model-View-ViewModel) architecture:
